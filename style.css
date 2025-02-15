@@ -1,0 +1,120 @@
+/* 確保畫面填滿 */
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* 讓內容對齊畫面上方 */
+}
+
+/* 讓生成器略微上移（約畫面 45% 的位置） */
+.container {
+    width: 90%;
+    max-width: 500px; /* 增加寬度，確保名字不換行 */
+    padding: 25px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 5vh; /* 讓它從畫面上方下移 5% */
+}
+
+/* 美觀的分隔線 */
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 15px 0;
+}
+
+/* 讓「種族 + 性別」並排 */
+.select-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* 讓選單有一致的寬度 */
+.select-group label {
+    white-space: nowrap;
+}
+
+.select-group select {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* 讓「生成中文 / 英文」並排 */
+.checkbox-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+/* 美化按鈕 */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 66%; /* 讓按鈕變成原本的 2/3 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 美化輸出結果，讓名字不會換行 */
+.name-output {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    width: 100%;
+    white-space: nowrap; /* 避免名字換行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+/* 響應式設計 */
+@media (max-width: 600px) {
+    .select-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: 95%;
+        padding: 15px;
+        top: 2vh; /* 在手機上稍微往下移，避免過於靠近頂部 */
+    }
+
+    button {
+        width: 80%;
+    }
+}

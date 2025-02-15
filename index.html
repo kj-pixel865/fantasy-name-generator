@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奇幻角色姓名生成器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>奇幻角色姓名生成器</h2>
+
+        <div class="divider"></div> <!-- 添加美觀的分隔線 -->
+
+        <!-- 種族 + 性別 並排 -->
+        <div class="select-group">
+            <label for="race">種族：</label>
+            <select id="race">
+                <option value="human">人類</option>
+                <option value="elf">精靈</option>
+                <option value="dwarf">矮人</option>
+                <option value="orc">獸人</option>
+            </select>
+
+            <label for="gender">性別：</label>
+            <select id="gender">
+                <option value="male">男性</option>
+                <option value="female">女性</option>
+            </select>
+        </div>
+
+        <!-- 生成中文 / 英文 並排 -->
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" id="generateChinese" checked> 生成中文翻譯姓名
+            </label>
+            <label>
+                <input type="checkbox" id="generateEnglish" checked> 生成英文姓名
+            </label>
+        </div>
+
+        <div class="divider"></div> <!-- 添加美觀的分隔線 -->
+
+        <button onclick="generateName()">生成名字</button>
+        <p class="name-output" id="nameOutput">請點擊按鈕生成名字</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
